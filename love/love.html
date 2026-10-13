@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="love.css">
-    <title>Love</title>
+    <title>For Michelle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="wrapper">
-        <!-- <img src="../thư love.png" alt=""> -->
         <div class="formInput">
             <div class="boxHands">
                 <div class="handsCat">
                     <img src="../image/handsCat.png" alt="">
                 </div>
-                <h1>My Love</h1>
+                <h1>Hello Michelle</h1>
             </div>
             <div class="boxSlider">
                     <div class="listSlider">
                         <div class="slider">
-                            <img src="../image/love1.jfif" alt="">
+                            <img src="../image/crsh.jpg" alt="">
                         </div>
                         <div class="slider">
                             <img src="../image/love2.png" alt="">
+                        </div>
+                        <div class="slider">
+                            <img src="../image/lovelove.gif" alt="">
                         </div>
                     </div>
                 <div class="left">
@@ -37,7 +39,7 @@
                 <div class="handsCatImgInput">
                     <img src="../image/handsCat.png" alt="">
                 </div>
-                <input type="text" id="inputField" placeholder="Nhập tên..." readonly>
+                <input type="text" id="inputField" placeholder="Tunggu Sebentar ya" readonly>
             </div>
             <div class="buttonLove">
                 <div class="cricleBtn"></div>
@@ -76,10 +78,11 @@
         <div class="rhombus">
             <div class="circle1"></div>
             <div class="circle2"></div>
-        </div>
+        </div>      
     </div>
 
     <div class="wrapperLetterForm">
+        <div class="button-container"></div>
         <div class="boxLetter">
             <i class="fa-solid fa-xmark"></i>
             <div class="formLetter">
@@ -109,6 +112,8 @@
                     <div class="mewmew2">
                         <img src="../image/mewmew.gif" alt="">
                     </div>
+                    <a href="https://wa.me/+08981821292?text=Mauu" class="button-container">
+                    </a>
                 </div>
             </div>
             <div class="before"></div>
@@ -170,8 +175,8 @@
     }
 
     const inputField = document.getElementById('inputField');
-    const textToType = "Hoàng Chí Thanh❤";
-    const typingSpeed = 100; // milliseconds per character
+    const textToType = "Pencet amplop nya❤";
+    const typingSpeed = 100; 
 
     let charIndex = 0;
     function typeText() {
@@ -201,7 +206,7 @@
                 document.querySelector(".button").style.height = "30px"
             },3500)
             setTimeout(()=>{
-                document.querySelector(".button").innerHTML = "Nhận thư"
+                document.querySelector(".button").innerHTML = "Click Here"
             },4000)
         }
     }
@@ -211,10 +216,9 @@
     }, 11500)
     });
 
-    // .textLetter text h2
     let indexText = 0;
     let textLetter = document.querySelector('.textLetter h2');
-    const textLetterH2 = "Gửi em!";
+    const textLetterH2 = "Halo acaaa!";
     let timoutTextLetter;
 
     function textCharLetter(){
@@ -232,17 +236,17 @@
     }
     function funcTimeoutLetter(){
         indexText = 0; // Reset indexText
-        textLetter.textContent = ''; // Xóa nội dung hiện tại của textLetter
+        textLetter.textContent = ''; // 
         clearInterval(timoutTextLetter);
         timoutTextLetter =  setInterval(()=>{
                 textCharLetter();
             }, 200)
     }
 
-    // chữ của thư bạn muốn gửi
+    
     let indexTextContent = 0;
     let textLetterContent = document.querySelector('.contentLetter');
-    const textLetterP = "Lời chúc ở đây";
+    const textLetterP = "Haloo Michelle. This is message about my feeling to you, I know it sounds kinda weird, cuz we haven't even known each other for a month. Maybe we're still hiding our true nature or character from each other. All this time getting to know you, hearing your stories it just makes me more and more sure that you're the right person for me to love. Mungkin setelah kamu membaca ini kita akan menjadi asing, It doesn't mean I don't love you anymore. tetapi aku lebih ke arah sadar diri, dan menghargai keputusan yang kamu ambil. Bukan berarti aku juga berenti memperjuangkan mu, aku juga pengen nunjukin ke kamu omomnganku tentang 'i can handle ur ego' mungkin itu yang aku rasakan sekarang, ego kamu lagi tinggi-tingginya makanya aku bertahan sampe sekarang bahkan masih berusaha membalikkan perasaan kamu yang dulu dengan segala cara yang bisa aku lakukan. tetapi mungkin bukan itu yang acaa inginkan. Mungkin aku berenti memperjuangkan mu sampai disini saja, bukan berarti aku sama aja seperti cowo lain yang manis diawal. Kalau kamu pengen disayang seperti dulu lagi just show me that thing again, tunjukin lagi acaa pengen aku. I will give my all and as much as I can. Aku rasa aku dah cukup nunjukin diriku seperti apa, value aku gimana. sisanya tinggal acaa yang menilai. aku akan menunggu mu selama apapun itu. asal kamu benar benar siap dan menginginkan ku. kamu telah mengubah banyak sudut pandang dan diriku menjadi lebih baik. That's why I did all this for you. Thankyou for everything acaa. LOVE U SO MUCH :3 ";
     let timoutTextLetterContent;
     function textCharLetterContent(){
         if (indexTextContent < textLetterP.length) {
@@ -257,7 +261,7 @@
     }
     function funcTimeoutLetterContent(){
         indexTextContent = 0; // Reset indexTextContent
-        textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
+        textLetterContent.textContent = ''; // 
         clearInterval(timoutTextLetterContent);
         timoutTextLetterContent =  setInterval(()=>{
             textCharLetterContent();
@@ -299,13 +303,6 @@
                 })
             })
         },500)
-    })
-
-    document.querySelector(".fa-xmark").addEventListener("click", function(){
-        indexTextContent = 0; // Reset indexTextContent
-        textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
-        clearInterval(timoutTextLetterContent)
-        $(".wrapperLetterForm").fadeOut()
     })
 </script>
 </html>
