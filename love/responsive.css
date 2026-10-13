@@ -1,0 +1,145 @@
+/* responsive.css
+   Pasang SETELAH love.css:
+   <link rel="stylesheet" href="love.css">
+   <link rel="stylesheet" href="responsive.css">
+*/
+
+/* ---------- Dasar (semua ukuran) ---------- */
+html { -webkit-text-size-adjust: 100%; }
+body { overscroll-behavior: none; touch-action: manipulation; }
+
+/* 100vh di HP terpotong address bar -> pakai dvh */
+.wrapper, .boxHeart, .boxLine, .wrapperLetterForm { height: 100vh; height: 100dvh; }
+.loadingLove { min-height: 100vh; min-height: 100dvh; }
+.wrapperLetterForm { width: 100%; }
+.boxLine { max-width: 1000px; width: 100%; }
+
+/* ---------- HP & tablet kecil (<= 767px) ---------- */
+@media (max-width: 767px) {
+
+  /* Kartu utama */
+  .formInput { width: 92%; padding-bottom: 14px; border-radius: 16px; }
+  .boxHands h1 { font-size: clamp(30px, 10vw, 44px); }
+  .formInput .handsCat { width: 60px; }
+  .boxHandsInput .handsCatImgInput { width: 60px; }
+
+  /* Slider foto */
+  .boxSlider { width: 100%; margin-top: 64px; }
+  .listSlider { width: min(68vw, 280px); height: min(44vw, 180px); }
+  .listSlider img { width: 100%; height: 100%; }
+  .boxSlider .left, .boxSlider .right { font-size: 26px; padding: 10px; }
+  .left  { left: 4%; }
+  .right { right: 4%; }
+
+  /* Input mengetik */
+  .boxHandsInput { width: 80%; }
+  .boxHandsInput input { font-size: 18px; }
+
+  /* Tombol amplop (area sentuh lebih besar) */
+  .buttonLove .button { min-height: 30px; font-size: 13px; }
+
+  /* Mobil + hati + jalan */
+  .boxCar { bottom: 12%; animation: carMobile 4s 1s forwards; }
+  .boxCar img { width: 220px; }
+  @keyframes carMobile {
+    0%      { transform: translateX(-260px); }
+    50%,100%{ transform: translateX(4vw); }
+  }
+  .heart1, .heart2, .heart3, .heart4, .heart5, .heart6 {
+    left: calc(4vw + 190px);
+    bottom: 16%;
+  }
+  .ground-line { bottom: 12%; }
+
+  /* Amplop jatuh */
+  .letters { width: 52px; }
+
+  /* ---------- Popup surat ---------- */
+  .boxLetter { padding: 12px; }
+  .boxLetter .formLetter {
+    width: 100%;
+    max-width: 440px;
+    height: 88vh; height: 88dvh;
+    max-height: 680px;
+    padding: 12px 10px;
+  }
+  .boxLetter .before { width: 80%; height: 38%; }
+
+  .formLetter .wrapperLetter {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  .giftbox { display: none; }          /* dekorasi, disembunyikan agar teks lega */
+  .heartAnimation { display: none; }
+
+  .textLetter {
+    width: 100%;
+    flex: 1;
+    min-height: 0;                     /* wajib agar anak bisa scroll di flexbox */
+    padding-bottom: 64px;              /* ruang untuk tombol di bawah */
+  }
+  .textLetter h2 { font-size: 26px; margin-top: 30px; }
+  .textLetter .contentLetter {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    max-height: none;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mewmew1, .mewmew2 { width: 56px; }
+
+  /* Tombol "click here for u answer": tengah bawah, bukan left:350px */
+  .wrapperLetterForm > .button-container { display: none; } /* duplikat, lihat catatan */
+  .wrapperLetter .button-container::after {
+    left: 50%;
+    right: auto;
+    bottom: 14px;
+    transform: translateX(-50%);
+    width: 190px;
+    height: 42px;
+    line-height: 42px;
+    font-size: 14px;
+    z-index: 200;
+  }
+
+  /* Tombol tutup */
+  .fa-xmark { top: 12px; right: 12px; font-size: 28px; padding: 8px; z-index: 1100; }
+}
+
+/* ---------- HP kecil (<= 380px) ---------- */
+@media (max-width: 380px) {
+  .boxHands h1 { font-size: 30px; }
+  .listSlider { width: 64vw; }
+  .boxCar img { width: 180px; }
+  .heart1, .heart2, .heart3, .heart4, .heart5, .heart6 { left: calc(4vw + 155px); }
+  .textLetter .contentLetter { font-size: 15.5px; }
+  .wrapperLetter .button-container::after { width: 170px; font-size: 13px; }
+}
+
+/* ---------- Tablet (768px - 1023px) ---------- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .formInput { width: 70%; }
+  .listSlider { width: 300px; height: 180px; }
+  .listSlider img { width: 100%; }
+  .left  { left: 12%; }
+  .right { right: 12%; }
+  .boxLetter .formLetter { width: 90%; max-width: 760px; height: 80dvh; }
+  .wrapperLetter .button-container::after { left: 50%; transform: translateX(-50%); bottom: 20px; }
+  .wrapperLetterForm > .button-container { display: none; }
+}
+
+/* ---------- HP landscape (tinggi layar pendek) ---------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .formInput { width: 70%; }
+  .boxSlider { margin-top: 48px; }
+  .listSlider { height: 90px; width: 160px; }
+  .boxCar img { width: 150px; }
+  .boxLetter .formLetter { height: 94dvh; max-height: none; }
+  .textLetter h2 { margin-top: 12px; font-size: 22px; }
+  .textLetter .contentLetter { font-size: 15px; line-height: 1.5; }
+}

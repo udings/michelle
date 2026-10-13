@@ -10,6 +10,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    min-height: 100dvh;   /* tidak terpotong address bar di HP */
+    padding: 0 16px;      /* jarak aman kiri-kanan */
 }
 .loading{
     position: relative;
@@ -89,7 +91,7 @@ body{
 }
 .progress-bar{
     position: relative;
-    width: 400px;
+    width: min(400px, 88vw);   /* maks 400px, di HP kecil mengikuti layar */
     height: 45px;
     background: #fff;
     padding: 3px;
@@ -236,9 +238,23 @@ body{
     border-radius: 50%;
 }
 
-/* reponsive */
-@media(max-width: 767px) {
+/* responsive */
+@media (max-width: 767px) {
     .progress-bar{
-        width: 340px;
+        width: min(340px, 86vw);
+        height: 40px;
     }
+    .loading .textLoad{
+        font-size: 18px;
+    }
+    .button{
+        max-width: 90vw;
+    }
+}
+
+@media (max-width: 360px) {
+    .heartItem.item1 img{ width: 30px; }
+    .heartItem.item2 img{ width: 38px; }
+    .heartItem.item3 img{ width: 46px; }
+    .loading .textLoad{ font-size: 16px; }
 }
